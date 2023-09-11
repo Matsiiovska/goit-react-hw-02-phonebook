@@ -16,20 +16,18 @@ class ContactForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    // Вызов функции onSubmit из родительского компонента с передачей объекта контакта
     this.props.onSubmit({ name: this.state.name, number: this.state.number });
 
-    // Сброс состояния формы
+    // Скидання форми
     this.reset();
   };
 
-  // Обработка изменения значений полей формы
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
-  // Сброс состояния формы
+  
   reset = () => {
     this.setState({ number: '', name: '' });
   };
